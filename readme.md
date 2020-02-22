@@ -11,6 +11,7 @@
 - research how text is rendered on the page, where does it come from?
   - embed text within html?
   - is there another way?
+- copyright notice
 
 ### Awesome examples:
 

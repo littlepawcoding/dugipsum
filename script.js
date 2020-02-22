@@ -1,6 +1,15 @@
-let textTest1 = "Dug ipsum test text 1...";
+// dummy text
+const ipsumText = [
+  "text 1...",
+  "text 2...",
+  "text 3...",
+  "text 4...",
+  "text 5..."
+];
+
+console.log(ipsumText[3]);
 
 // function for button to display text
 function displayText() {
-  document.getElementById("text").innerHTML = textTest1;
+  document.getElementById("text").innerHTML = ipsumText;
 }
