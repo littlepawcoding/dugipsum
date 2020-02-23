@@ -7,9 +7,7 @@ const ipsumText = [
   "text 5..."
 ];
 
-console.log(ipsumText[3]);
-
-// function for button to display text
+// function for button to display text & randomise array
 function displayText() {
-  document.getElementById("text").innerHTML = ipsumText;
+  text.innerHTML = ipsumText[Math.floor(Math.random() * ipsumText.length)];
 }
