@@ -12,6 +12,7 @@
   - embed text within html?
   - is there another way?
 - copyright notice
+- copy to clipboard button
 
 ### Awesome examples:
 

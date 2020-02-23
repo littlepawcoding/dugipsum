@@ -23,11 +23,14 @@
         </section>
         <!-- selection section -->
         <section>
-          <select>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
+          <label
+            >Choose amount of paragraphs:
+            <select class="totalParagraphs" name="totalParagraphs">
+              <option value="one">1</option>
+              <option value="two">2</option>
+              <option value="three">3</option>
+            </select>
+          </label>
           <p>Paragraphs</p>
           <input type="checkbox" name="" />Start with &quot;Dug ipsum dolor sit
           amet...?&quot;
@@ -35,7 +38,7 @@
         </section>
         <!-- text section -->
         <section>
-          <p id="text">where text will be rendered</p>
+          <p id="text" class="result">where text will be rendered</p>
         </section>
       </article>
     </main>
