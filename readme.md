@@ -21,3 +21,5 @@
 - [Pirate Ipsum](https://pirateipsum.me/)
 
 MVP - get button functional
+https://codepen.io/istrita/pen/qLgXNK
+https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi

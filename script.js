@@ -7,10 +7,24 @@ const ipsumText = [
   "text 5..."
 ];
 
-// displaying the selection
+// displaying the selection function
+
 let sel = document.getElementById("totalParagraphs");
 
-console.log(sel.text);
+function getSelected(sel) {
+  let opt;
+  for (let i = 0, len = sel.options.length; i < len; i++) {
+    opt = sel.options[i];
+    if (opt.selected === true) {
+      break;
+    }
+  }
+  return opt;
+}
+let opt = getSelected(sel);
+
+console.log(opt.value);
+console.log(opt.text);
 
 // method for button click
 document.getElementById("button").addEventListener("click", displayText);
