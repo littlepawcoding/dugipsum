@@ -7,27 +7,18 @@ const ipsumText = [
   "text 5..."
 ];
 
-// displaying the selection function
+// displaying the selected function
 
-let sel = document.getElementById("totalParagraphs");
+function showSelected() {
+  let paragraphTotal = document.getElementById("totalParagraphs");
+  let value = paragraphTotal[paragraphTotal.selectedIndex].value;
 
-function getSelected(sel) {
-  let opt;
-  for (let i = 0, len = sel.options.length; i < len; i++) {
-    opt = sel.options[i];
-    if (opt.selected === true) {
-      break;
-    }
-  }
-  return opt;
+  document.getElementById("displayText").innerHTML = value;
 }
-let opt = getSelected(sel);
 
-console.log(opt.value);
-console.log(opt.text);
+document.getElementById("button").addEventListener("click", showSelected);
 
 // method for button click
-document.getElementById("button").addEventListener("click", displayText);
 
 // function to display text & randomise array
 function displayText() {
