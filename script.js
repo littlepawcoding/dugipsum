@@ -7,45 +7,23 @@ const ipsumText = [
   "text 5..."
 ];
 
-// displaying the selected function
-
+// function to display dropdown selection
 function showSelected() {
   let paragraphTotal = document.getElementById("totalParagraphs");
   let value = paragraphTotal[paragraphTotal.selectedIndex].value;
 
   document.getElementById("displayText").innerHTML = value;
 }
-
+// method for button click
 document.getElementById("button").addEventListener("click", showSelected);
 
-// method for button click
+// funtion to display dummy text & randomise
+// should random be in a separate function?
+let i = 0;
 
-// function to display text & randomise array
-function displayText() {
-  text.innerHTML = ipsumText[Math.floor(Math.random() * ipsumText.length)];
+function showRandom() {
+  document.getElementById("displayRandom").innerHTML =
+    ipsumText[Math.floor(Math.random() * ipsumText.length)];
+  if (i == ipsumText.length) i = 0;
 }
-
-// // function for total of paragraphs selection
-// document
-//   .getElementById("totalParagraphs")
-//   .addEventListener("change", totalParagraphs);
-
-// function totalParagraphs() {
-//   text.innerHTML = ipsumText;
-// }
-
-function dropdown() {
-  displayText();
-  let emptyString = "";
-  for (
-    let i = 0;
-    i <
-    document.select[0].totalParagraphs.options[
-      document.select[0].totalParagraphs.selectedIndex
-    ].value;
-    i++
-  ) {
-    emptyString += "<p>" + ipsumText[i] + "<" + "/p>";
-  }
-  document.getElementById("text").innerHTML = ipsumText;
-}
+document.getElementById("button2").addEventListener("click", showRandom);
