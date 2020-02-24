@@ -7,6 +7,11 @@ const ipsumText = [
   "text 5..."
 ];
 
+// displaying the selection
+let sel = document.getElementById("totalParagraphs");
+
+console.log(sel.text);
+
 // method for button click
 document.getElementById("button").addEventListener("click", displayText);
 
