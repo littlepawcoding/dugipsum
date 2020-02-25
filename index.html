@@ -25,7 +25,11 @@
         <section>
           <label
             >Choose amount of paragraphs:
-            <select id="totalParagraphs" name="totalParagraphs">
+            <select
+              id="totalParagraphs"
+              onchange="dropdownChange(this.value)"
+              name="totalParagraphs"
+            >
               <option value="1" selected>1</option>
               <option value="2">2</option>
               <option value="3">3</option>

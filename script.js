@@ -7,8 +7,14 @@ const ipsumText = [
   "text 5..."
 ];
 
+// function for dropdown to trigger array
+function dropdownChange(value) {
+  showSelected();
+}
+
 // function to display dropdown selection
 function showSelected() {
+  showRandom();
   let paragraphTotal = document.getElementById("totalParagraphs");
   let value = paragraphTotal[paragraphTotal.selectedIndex].value;
 
