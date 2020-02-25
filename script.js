@@ -7,6 +7,13 @@ const ipsumText = [
   "text 5..."
 ];
 
+let paragraphTotal = document.getElementById("totalParagraphs");
+let value = paragraphTotal[paragraphTotal.selectedIndex].value;
+
+if (value === "1") {
+  console.log("hello 1");
+}
+
 // function for dropdown to trigger array
 function dropdownChange(value) {
   showSelected();
