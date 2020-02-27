@@ -7,16 +7,20 @@ const ipsumText = [
   "text 5..."
 ];
 
-let drop = document.getElementById("totalParagraphs").value;
+function ifSelection() {
+  let text;
+  let selection = document.getElementById("totalParagraphs").value;
 
-function dropdownChange() {
-  if (drop === "1") {
-    console.log("hello one");
-  } else if (drop == "2") {
-    console.log("hello 2");
-  } else {
-    console.log("three!!");
+  switch (selection) {
+    case "1":
+      text = "One";
+      break;
+    case "2":
+      text = "Two";
+    default:
+      text = "Select a number";
   }
+  document.getElementById("displayText").innerHTML = text;
 }
 
 // // function for dropdown to trigger array
