@@ -25,25 +25,29 @@
         <section>
           <label
             >Choose amount of paragraphs:
-            <select
-              id="totalParagraphs"
-              onchange="dropdownChange(this.value)"
-              name="totalParagraphs"
-            >
+            <select id="totalParagraphs" name="totalParagraphs">
               <option value="1" selected>1</option>
               <option value="2">2</option>
               <option value="3">3</option>
             </select>
           </label>
-          <!-- <p>Paragraphs</p>
-          <input type="checkbox" name="" />Start with &quot;Dug ipsum dolor sit
-          amet...?&quot; -->
-          <button onclick="ifSelection()" id="button">Fetch!</button>
-          <p id="displayText">where text will be rendered</p>
+
+          <p>Paragraphs</p>
+          <input
+            type="checkbox"
+            value="none"
+            name="checkbox"
+            id="startDugIpsum"
+          />Start with &quot;Dug ipsum dolor...?&quot;
+
+          <button id="button">Fetch!</button>
+          <p id="displayTheText">where text will be rendered</p>
         </section>
         <!-- text section -->
         <section>
-          <p id="displayRandom">where text will be rendered</p>
+          <p id="displayRandom" style="display: none">
+            where text will be rendered
+          </p>
           <button id="button2">Fetch 2!</button>
         </section>
       </article>
