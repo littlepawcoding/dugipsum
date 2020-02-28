@@ -3,13 +3,16 @@ let dugText = ["text 1...", "text 2...", "text 3...", "text 4...", "text 5..."];
 
 let start = ["Dug ipsum dolor "];
 
-function dugIpsum(dugText, start) {
+let lipsum = new Lipsum(dugText, start, false);
+// lipsum.init();
+
+function Lipsum(dugText, start) {
   this.dugText = dugText;
   this.start = start;
   this.startWith = true;
   this.list;
   this.startWith = document.getElementById("startDugIpsum");
-  this.fetchButton = document.getElementById("button");
+  this.fetchButton = document.getElementById("fetch");
   this.lipsumParagraphsNum = document.getElementById("displayTheText");
   this.displayRandom = document.getElementById("displayRandom");
   this.numberOfParagraphs = 3;
@@ -21,12 +24,12 @@ function dugIpsum(dugText, start) {
 }
 
 // not sure what this does yet
-dugIpsum.prototype.init = function() {
+Lipsum.prototype.init = function() {
   this.generateLipsumLister();
 };
 
 // creates list of words from dugText, if this.startWith add 1st line
-dugIpsum.prototype.initList = function() {
+Lipsum.prototype.initList = function() {
   this.list = null;
   let list;
 
@@ -47,8 +50,8 @@ dugIpsum.prototype.initList = function() {
   }
 };
 
-dugIpsum.prototype.generateLipsumLister = function() {
-  let lipsum = this;
+Lipsum.prototype.generateLipsumLister = function() {
+  lipsum = this;
   this.fetchButton.addEventListener("click", function() {
     lipsum.initList();
     lipsum.generateLipsum();
@@ -68,7 +71,7 @@ dugIpsum.prototype.generateLipsumLister = function() {
 };
 
 // generates the lipsum paragraphs
-dugIpsum.prototype.generateLipsum = function() {
+Lipsum.prototype.generateLipsum = function() {
   document.getElementById("displayRandom").style.display = "block";
   let finalString = "";
 
@@ -80,7 +83,7 @@ dugIpsum.prototype.generateLipsum = function() {
 };
 
 // generates multiple sentences to form a paragraph
-dugIpsum.prototype.generateSentences = function() {
+Lipsum.prototype.generateSentences = function() {
   let sentencesArray = [];
   let numberOfSentences = this.randomNumBetween(
     this.minNumSentencesPerParagraph,
@@ -98,4 +101,17 @@ dugIpsum.prototype.generateSentences = function() {
     );
   }
   return sentencesArray.join(" ");
+};
+
+// determines number of commas depending on number of words
+Lipsum.prototype.numberOfCommas = function(numberOfWordsPerSentence) {
+  let numberOfCommas;
+  if (numberOfWordsPerSentence <= 2) {
+    numberOfCommas = 0;
+  } else if (numberOfWordsPerSentence >= 5 && numberOfWordsPerSentence <= 6) {
+    numberOfCommas = 1;
+  } else if (numberOfWordsPerSentence > 7) {
+    numberOfCommas = 2;
+  }
+  return numberOfCommas;
 };
