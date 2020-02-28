@@ -32,7 +32,7 @@
             </select>
           </label>
 
-          <p>Paragraphs</p>
+          <!-- startWith section -->
           <input
             type="checkbox"
             value="none"
@@ -40,19 +40,20 @@
             id="startDugIpsum"
           />Start with &quot;Dug ipsum dolor...?&quot;
 
+          <!-- button -->
           <button id="button">Fetch!</button>
-          <p id="displayTheText">where text will be rendered</p>
         </section>
-        <!-- text section -->
+
+        <!-- display the text -->
         <section>
-          <p id="displayRandom" style="display: none">
-            where text will be rendered
-          </p>
-          <button id="button2">Fetch 2!</button>
+          <div id="displayRandom" style="display: none"></div>
         </section>
       </article>
     </main>
+
+    <br />
     <footer role="contentinfo">Made with &hearts;</footer>
+
     <script src="script.js"></script>
   </body>
 </html>
