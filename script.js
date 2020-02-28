@@ -14,6 +14,10 @@ function dugIpsum(dugText, start) {
   this.displayRandom = document.getElementById("displayRandom");
   this.numberOfParagraphs = 3;
   this.maxNumberOfParagraphs = 10;
+  this.minNumSentencesPerParagraph = 2;
+  this.maxNumSentencesPerParagraph = 5;
+  this.minNumWordsPerSentence = 2;
+  this.maxNumWordsPerSentence = 7;
 }
 
 // not sure what this does yet
@@ -72,5 +76,26 @@ dugIpsum.prototype.generateLipsum = function() {
     let paragraph = this.generateSentences();
     finalString += "<p>" + paragraph + "</p>";
   }
-  this.displayRandom.innerHTML - finalString;
+  this.displayRandom.innerHTML = finalString;
+};
+
+// generates multiple sentences to form a paragraph
+dugIpsum.prototype.generateSentences = function() {
+  let sentencesArray = [];
+  let numberOfSentences = this.randomNumBetween(
+    this.minNumSentencesPerParagraph,
+    this.maxNumSentencesPerParagraph
+  );
+  for (let i = 0; i < numberOfSentences; i++) {
+    let numberOfWordsPerSentence = this.randomNumBetween(
+      this.minNumWordsPerSentence,
+      this.maxNumWordsPerSentence
+    );
+    let numberOfCommas = this.numberOfCommas(numberOfWordsPerSentence);
+
+    sentencesArray.push(
+      this.generateSentences(numberOfWordsPerSentence, numberOfCommas)
+    );
+  }
+  return sentencesArray.join(" ");
 };
